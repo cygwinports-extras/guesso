@@ -1,0 +1,13 @@
+inherit qt3
+
+DESCRIPTION="Qt guess-the-number game"
+HOMEPAGE="http://kde-apps.org/content/show.php?content=30673"
+SRC_URI="http://kde-apps.org/CONTENT/content-files/30673-${P}.tar.gz"
+SRC_DIR=${PN}
+
+src_install() {
+	cd ${B}
+	dobin ${PN}.exe
+	insinto /usr/share/${PN}/translation
+	doins translation/*.ts
+}
